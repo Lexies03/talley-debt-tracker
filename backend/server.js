@@ -8,7 +8,7 @@ require("dotenv").config();
 const userRouter = require("./router/user.router");
 
 const app = express();
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 1010;
 
 app.use(express.json);
 app.use(cors());
@@ -20,8 +20,8 @@ mongoose
   .then(() => {
     console.log("MongoDB Connected");
   })
-  .catch(() => {
-    console.log("Failed to connect mongodb");
+  .catch((error) => {
+    console.log(error, "Failed to connect mongodb");
   });
 
 app.use("/user", userRouter);
