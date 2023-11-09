@@ -21,20 +21,34 @@ const createUser = async (request, response) => {
 const deleteUser = async (request, response) => {
   try {
     const id = request.params.id;
-    const user = await UserModel.findById({ _id: id });
+    const user = await UserModel.findOneAndDelete({ _id: id });
     response.status(200).json(user);
   } catch (error) {
     response.status(500).send("Failed to delete users");
   }
 };
 
+// const updateUser = async (request, response) => {
+//   try {
+//     const id = request.params.id;
+//     const user = await UserModel.findOneAndUpdate({ _id: id }, { ...request.body });
+//     response.status(200).json(user);
+//   } catch (error) {
+//     response.status(500).send("Failed tp update user");
+//   }
+// };
+
 const updateUser = async (request, response) => {
   try {
-    const id = requst.params.id;
-    const user = await UserModel.findById({ _id: id }, { ...request.body });
+    const id = request.params.id;
+    const user = await UserModel.findOneAndUpdate(
+      { _id: id },
+      { ...request.body }
+    );
     response.status(200).json(user);
   } catch (error) {
-    response.status(500).send("Failed tp update user");
+    response.status(500).send("Failed to update user");
+    console.log(error);
   }
 };
 
