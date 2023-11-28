@@ -1,24 +1,31 @@
+import { useContext } from "react";
+import { AuthContext } from "../../model/provider/AuthProvider";
+
+//components
 import NavigationMenu from "../components/section/NavigationMenu";
+import LoginModal from "../components/modal/LoginModal";
+import Footer from "../components/section/Footer";
 
 //assets
-import DebtModelImage from "../../assets/debt-model.png"
-import CellPhoneModel from "../../assets/cellphone-model.jpg"
+import DebtModelImage from "../../assets/debt-model.png";
+import CellPhoneModel from "../../assets/cellphone-model.jpg";
 import CustomButton from "../components/custom/CustomButton";
 
 const HomePage = () => {
+  const [state, dispatch] = useContext(AuthContext);
+
   return (
     <div>
       <section>
         <NavigationMenu />
       </section>
+
+      <section>{state.loginModalOpen ? <LoginModal /> : null}</section>
+
       <section className="flex justify-around py-36">
-        <div className="relative w-[50%] flex justify-center">
+        <div className="w-[50%] flex justify-center">
           <img src={DebtModelImage} alt="Model" className="w-80" />
-          <img
-            src={CellPhoneModel}
-            alt="Model"
-            className="w-64 rounded-full absolute left-24 top-52"
-          />
+          <img src={CellPhoneModel} alt="Model" className="w-64 rounded-full" />
         </div>
         <article className="mr-10 flex flex-col justify-between ">
           <h1 className="font-bold text-5xl text-blue-900 py-6">
@@ -41,14 +48,16 @@ const HomePage = () => {
         </article>
       </section>
 
-      <section className="flex justify-between bg-gradient-to-r from-blue-400 to-blue-500">
-        <div className="ml-10">
-          <img src={DebtModelImage} alt="Model" className="w-96" />
-        </div>
-        <article className="mr-10">
-          <h1>Track your debtors using this app!</h1>
-        </article>
-      </section>
+      <Footer />
+
+      {/* <section className="flex justify-between bg-gradient-to-r from-blue-400 to-blue-500">
+          <div className="ml-10">
+            <img src={DebtModelImage} alt="Model" className="w-96" />
+          </div>
+          <article className="mr-10">
+            <h1>Track your debtors using this app!</h1>
+          </article>
+        </section> */}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { Children, createContext, useReducer, useState } from "react";
+import { createContext, useReducer, useState } from "react";
 
 const initialState = {
   loginModalOpen: false,
@@ -20,9 +20,9 @@ const AuthProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <AuthContext.Provider value={[state, dispatch]}>
-      {props.Children}
+      {props.children}
     </AuthContext.Provider>
   );
 };
 
-export default AuthProvider;
+export { AuthProvider, AuthContext };

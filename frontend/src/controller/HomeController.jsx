@@ -1,9 +1,8 @@
 import HomePage from "../view/pages/HomePage";
-
 const HomeController = () => {
   return (
     <div>
-      <HomePage/>
+      <HomePage />
     </div>
   );
 };

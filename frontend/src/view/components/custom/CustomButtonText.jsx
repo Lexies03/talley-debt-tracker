@@ -7,7 +7,7 @@ const CustomButtonText = ({
   textColor,
   hover,
 }) => {
-  const btnStyle = `px-4 py-1 underline ${width} ${height} ${textColor} ${hover}`;
+  const btnStyle = `px-4 py-0 underline ${width} ${height} ${textColor} ${hover}`;
   return (
     <button type={type} className={btnStyle}>
       {name}
