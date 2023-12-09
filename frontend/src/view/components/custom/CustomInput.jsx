@@ -4,7 +4,7 @@ const CustomInput = ({ width, height, type, icon, placeholder }) => {
   return (
     <div className="flex items-center bg-white rounded-md p-1 w-[80%] m-1">
       <input type={type} placeholder={placeholder} className={sizeInput} />
-      <span className="text-2xl text-orange-500">{icon}</span>
+      <span className="text-2xl text-gray-400">{icon}</span>
     </div>
   );
 };

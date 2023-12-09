@@ -2,6 +2,7 @@ import { createContext, useReducer, useState } from "react";
 
 const initialState = {
   loginModalOpen: false,
+  registerModalOpen: false,
 };
 
 const AuthContext = createContext();
@@ -14,7 +15,13 @@ const AuthProvider = (props) => {
           ...state,
           loginModalOpen: action.payload,
         };
+      case "REGISTER_MODAL_OPEN":
+        return {
+          ...state,
+          registerModalOpen: action.payload,
+        };
     }
+
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

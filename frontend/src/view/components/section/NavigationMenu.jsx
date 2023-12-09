@@ -17,6 +17,10 @@ const NavigationMenu = () => {
     dispatch({ type: "LOGIN_MODAL_OPEN", payload: true });
   };
 
+  const registerModalOpen = () => {
+    dispatch({ type: "REGISTER_MODAL_OPEN", payload: true });
+  };
+
   const links = [
     {
       name: "Home",
@@ -69,7 +73,7 @@ const NavigationMenu = () => {
           onClick={loginModalOpen}
         />
         {/* <CustomButtonText name="Register" textColor="text-gray-800" width="text-md"/> */}
-        <button className="font-bold text-orange-600">Register</button>
+        <button className="font-bold text-orange-600" onClick={registerModalOpen}>Register</button>
       </div>
     </div>
   );

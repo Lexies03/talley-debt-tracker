@@ -4,6 +4,7 @@ import { AuthContext } from "../../model/provider/AuthProvider";
 //components
 import NavigationMenu from "../components/section/NavigationMenu";
 import LoginModal from "../components/modal/LoginModal";
+import RegisterModal from "../components/modal/RegisterModal";
 import Footer from "../components/section/Footer";
 
 //assets
@@ -21,6 +22,7 @@ const HomePage = () => {
       </section>
 
       <section>{state.loginModalOpen ? <LoginModal /> : null}</section>
+      <section>{state.registerModalOpen ? <RegisterModal /> : null}</section>
 
       <section className="flex justify-around py-36">
         <div className="w-[50%] flex justify-center">
