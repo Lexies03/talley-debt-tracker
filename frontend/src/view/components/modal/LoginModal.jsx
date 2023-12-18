@@ -17,9 +17,19 @@ import Logo from "../../../assets/logo.png";
 
 const LoginModal = () => {
   const [state, dispatch] = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const loginModalClose = () => {
     dispatch({ type: "LOGIN_MODAL_OPEN", payload: false });
+  };
+
+  const registerModalOpen = () => {
+    dispatch({ type: "REGISTER_MODAL_OPEN", payload: true });
+    dispatch({ type: "LOGIN_MODAL_OPEN", payload: false });
+  };
+
+  const loginEnter = () => {
+    navigate("dashboard");
   };
 
   return (
@@ -58,6 +68,7 @@ const LoginModal = () => {
               bgColor="bg-blue-900"
               textColor="text-white"
               hover="hover:bg-green-900"
+              onClick={loginEnter}
             />
             <CustomButtonText
               name="Forgot Password?"
@@ -68,6 +79,7 @@ const LoginModal = () => {
               name="Don't have an account? Register"
               textColor="text-gray-500"
               width="text-sm"
+              onClick={registerModalOpen}
             />
           </div>
         </div>

@@ -22,6 +22,11 @@ import Logo from "../../../assets/logo.png";
     dispatch({ type: "REGISTER_MODAL_OPEN", payload: false });
     };
 
+    const loginModalOpen = () => {
+      dispatch({ type: "REGISTER_MODAL_OPEN", payload: false });
+      dispatch({ type: "LOGIN_MODAL_OPEN", payload: true });
+    };
+
     return (
       <div>
         <section className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center">
@@ -91,6 +96,7 @@ import Logo from "../../../assets/logo.png";
                 name="Already have an account? Login"
                 textColor="text-gray-500"
                 width="text-sm"
+                onClick={loginModalOpen}
               />
             </div>
           </div>

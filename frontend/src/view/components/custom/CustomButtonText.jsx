@@ -6,10 +6,11 @@ const CustomButtonText = ({
   icon,
   textColor,
   hover,
+  onClick,
 }) => {
   const btnStyle = `px-4 py-0 underline ${width} ${height} ${textColor} ${hover}`;
   return (
-    <button type={type} className={btnStyle}>
+    <button type={type} className={btnStyle} onClick={onClick}>
       {name}
       <span>{icon}</span>
     </button>
