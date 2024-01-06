@@ -1,6 +1,6 @@
 const Dashboard = () => {
   return (
-    <div className="bg-red-200 h-screen overflow-hidden">
+    <div className="bg-white h-[calc(100vh-56px)] overflow-auto">
       <p>DASHBOARD OUTLET</p>
     </div>
   );
