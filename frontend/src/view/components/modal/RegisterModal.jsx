@@ -47,6 +47,7 @@ import Logo from "../../../assets/logo.png";
                   type="text"
                   icon={<MdPersonOutline />}
                   placeholder="First Name"
+                  percentage="w-[80%]"
                 />
                 <CustomInput
                   width="w-full"
@@ -54,6 +55,7 @@ import Logo from "../../../assets/logo.png";
                   type="text"
                   icon={<MdPersonOutline />}
                   placeholder="Last Name"
+                  percentage="w-[80%]"
                 />
                 <CustomInput
                   width="w-full"
@@ -61,6 +63,7 @@ import Logo from "../../../assets/logo.png";
                   type="text"
                   icon={<MdPersonOutline />}
                   placeholder="@username"
+                  percentage="w-[80%]"
                 />
                 <CustomInput
                   width="w-full"
@@ -68,6 +71,7 @@ import Logo from "../../../assets/logo.png";
                   type="text"
                   icon={<MdOutlineMailOutline />}
                   placeholder="Email"
+                  percentage="w-[80%]"
                 />
                 <CustomInput
                   width="w-full"
@@ -75,6 +79,7 @@ import Logo from "../../../assets/logo.png";
                   type="password"
                   icon={<MdLockOutline />}
                   placeholder="Password"
+                  percentage="w-[80%]"
                 />
                 <CustomInput
                   width="w-full"
@@ -82,6 +87,7 @@ import Logo from "../../../assets/logo.png";
                   type="password"
                   icon={<MdLockOutline />}
                   placeholder="Confirm Password"
+                  percentage="w-[80%]"
                 />
               </form>
               <CustomButton

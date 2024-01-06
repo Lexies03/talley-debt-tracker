@@ -7,7 +7,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import HomeController from "./controller/HomeController.jsx";
 import Log from "./view/components/modal/LoginModal.jsx";
-import Dashboard from "./view/pages/DashboardPage.jsx";
+import DashboardPage from "./view/pages/DashboardPage.jsx";
+import Dashboard from "./view/pages/outlet/Dashboard.jsx";
+import Debt from "./view/pages/outlet/Debt.jsx";
 import { AuthProvider } from "./model/provider/AuthProvider.jsx";
 
 const router = createBrowserRouter([
@@ -21,7 +23,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <DashboardPage />,
+    children: [
+      {
+        path: "board",
+        element: <Dashboard />,
+      },
+      {
+        path: "debt",
+        element: <Debt />,
+      },
+    ],
   },
 ]);
 

@@ -52,6 +52,7 @@ const LoginModal = () => {
                 type="text"
                 icon={<MdOutlineMailOutline />}
                 placeholder="Email"
+                percentage="w-[80%]"
               />
               <CustomInput
                 width="w-full"
@@ -59,6 +60,7 @@ const LoginModal = () => {
                 type="password"
                 icon={<MdLockOutline />}
                 placeholder="Password"
+                percentage="w-[80%]"
               />
             </form>
             <CustomButton
