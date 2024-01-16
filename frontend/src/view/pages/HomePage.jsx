@@ -25,9 +25,8 @@ const HomePage = () => {
       <section>{state.registerModalOpen ? <RegisterModal /> : null}</section>
 
       <section className="flex justify-around py-36">
-        <div className="w-[50%] flex justify-center">
+        <div className="w-[40%] flex justify-center">
           <img src={DebtModelImage} alt="Model" className="w-80" />
-          <img src={CellPhoneModel} alt="Model" className="w-64 rounded-full" />
         </div>
         <article className="mr-10 flex flex-col justify-between ">
           <h1 className="font-bold text-5xl text-blue-900 py-6">
@@ -48,6 +47,7 @@ const HomePage = () => {
             />
           </div>
         </article>
+        <img src={CellPhoneModel} alt="Model" className="w-64 rounded-full" />
       </section>
 
       <Footer />

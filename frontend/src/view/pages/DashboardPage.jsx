@@ -10,11 +10,11 @@ const Dashboard = () => {
     <div className="flex bg-white">
       <SideBar />
       <section className="w-full">
-        <div className="flex justify-between bg-blue-900 p-2 rounded-b-xl">
+        <div className="flex justify-between bg-blue-500 p-2">
           <SearchDebtor />
         </div>
 
-        <section className="">
+        <section className="p-2">
           <Outlet />
         </section>
       </section>

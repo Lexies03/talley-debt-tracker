@@ -22,10 +22,11 @@ const SearchDebtor = () => {
       {/* <div>
         <p className="font-bold text-xl text-orange-100">Welcome Taehyung!</p>
       </div> */}
-      <section className="flex items-center gap-1">
+      
+      {/* <section className="flex items-center gap-1">
         <img src={Logo} alt="Logo" className="w-12 h-10" />
         <p className="font-poppins font-bold text-lg text-white">Talley</p>
-      </section>
+      </section> */}
     </div>
   );
 };
