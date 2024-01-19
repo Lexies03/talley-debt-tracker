@@ -1,5 +1,13 @@
 const UserModel = require("../model/user.entity");
 
+const loginUser = async (request, response) => {
+  try {
+    
+  } catch (error) {
+    
+  }
+};
+
 const getUser = async (request, response) => {
   try {
     const user = await UserModel.find();

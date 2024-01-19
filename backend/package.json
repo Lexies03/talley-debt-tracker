@@ -4,7 +4,8 @@
   "description": "debt tracker fullstack",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "nodemon server.js"
   },
   "author": "Lissa",
   "license": "ISC",

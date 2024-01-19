@@ -14,7 +14,7 @@ const Dashboard = () => {
           <SearchDebtor />
         </div>
 
-        <section className="p-2">
+        <section className="">
           <Outlet />
         </section>
       </section>
