@@ -21,7 +21,6 @@ const AuthProvider = (props) => {
           registerModalOpen: action.payload,
         };
     }
-
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

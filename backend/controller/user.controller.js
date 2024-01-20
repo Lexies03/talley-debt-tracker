@@ -1,12 +1,44 @@
 const UserModel = require("../model/user.entity");
+const bcrypt = require("bcrypt");
 
-const loginUser = async (request, response) => {
+const registerUser = async (request, response) => {
+  const { fname, lname, username, email, password } = request.body;
   try {
+    const user = await UserModel.findOne({ email });
+    if (user) {
+      // throw new Error("Email already exist");
+      response.status(400).json("Email already exist");
+    }else{
+      //hash the password
+      //generate the salt
+      const salt = await bcrypt.genSalt(10);
+      const hash = await bcrypt.hash(password, salt);
+
+      const newuser = await UserModel.create({
+        fname,
+        lname,
+        username,
+        email,
+        password: hash,
+      });
+      response.status(201).json(newuser);
+      // return newuser;
+    }
+    // response.status(201).json(user);
     
   } catch (error) {
-    
+    response.status(500).send("Failed to add users");
   }
 };
+
+// const loginUser = async (request, response) => {
+//   try {
+//     const user = await UserModel.create({ ...request.body });
+//     response.status(201).json(user);
+//   } catch (error) {
+//     response.status(500).send("Failed to add users");
+//   }
+// };
 
 const getUser = async (request, response) => {
   try {
@@ -14,15 +46,6 @@ const getUser = async (request, response) => {
     response.status(200).json(user);
   } catch (error) {
     response.status(500).send("Failed to get all users");
-  }
-};
-
-const createUser = async (request, response) => {
-  try {
-    const user = await UserModel.create({ ...request.body });
-    response.status(201).json(user);
-  } catch (error) {
-    response.status(500).send("Failed to add users");
   }
 };
 
@@ -60,4 +83,4 @@ const updateUser = async (request, response) => {
   }
 };
 
-module.exports = { getUser, createUser, deleteUser, updateUser };
+module.exports = { getUser, registerUser, deleteUser, updateUser };
