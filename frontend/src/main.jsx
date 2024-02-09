@@ -9,7 +9,8 @@ import HomeController from "./controller/HomeController.jsx";
 import Log from "./view/components/modal/LoginModal.jsx";
 import DashboardPage from "./view/pages/DashboardPage.jsx";
 import Dashboard from "./view/pages/outlet/Dashboard.jsx";
-import Debt from "./view/pages/outlet/Debt.jsx";
+import DebtController from "./controller/DebtController.jsx";
+import StoreController from "./controller/StoreController.jsx";
 import { AuthProvider } from "./model/provider/AuthProvider.jsx";
 
 const router = createBrowserRouter([
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     element: <Log />,
   },
   {
-    path: "/dashboard",
+    path: "/talley",
     element: <DashboardPage />,
     children: [
       {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "debt",
-        element: <Debt />,
+        element: <DebtController />,
+      },
+      {
+        path: "store",
+        element: <StoreController />,
       },
     ],
   },

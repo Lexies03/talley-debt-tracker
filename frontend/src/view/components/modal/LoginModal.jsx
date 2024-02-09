@@ -29,7 +29,7 @@ const LoginModal = () => {
   };
 
   const loginEnter = () => {
-    navigate("dashboard");
+    navigate("talley");
   };
 
   return (

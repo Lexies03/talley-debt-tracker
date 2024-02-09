@@ -6,6 +6,7 @@ require("dotenv").config();
 
 //routers
 const userRouter = require("./router/user.router");
+const categoryRouter = require("./router/category.router");
 
 const app = express();
 const PORT = process.env.PORT || 1010;
@@ -25,6 +26,7 @@ mongoose
   });
 
 app.use("/user", userRouter);
+app.use("/category", categoryRouter);
 
 app.listen(PORT, () => {
   console.log(`App is listening at port ${PORT}`);

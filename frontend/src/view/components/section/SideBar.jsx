@@ -7,13 +7,17 @@ import Logo from "../../../assets/logo.png";
 //components
 import CustomButton from "../custom/CustomButton";
 
+//icons
+import { AiOutlinePlusCircle } from "react-icons/ai";
+
 const SideBar = () => {
   const buttonTabs = [
-    { name: "Summary", link: "board" },
-    { name: "Manage Debts", link: "debt" },
-    { name: "Account", link: "board" },
-    { name: "Settings", link: "board" },
+    { name: "Summary", link: "board", icon: <AiOutlinePlusCircle /> },
+    { name: "Manage Debts", link: "debt", icon: <AiOutlinePlusCircle /> },
+    { name: "Account", link: "board", icon: <AiOutlinePlusCircle /> },
+    { name: "Settings", link: "board", icon: <AiOutlinePlusCircle /> },
   ];
+  
   return (
     <div className="flex flex-col justify-between lg:w-[220px] 2xl:w-[300px] h-screen bg-gray-200">
       <section className="flex items-center gap-1 bg-slate-800 p-2">
@@ -40,6 +44,7 @@ const SideBar = () => {
                   key={index}
                   className="flex w-full p-2 2xl:text-md lg:text-sm border-b-2 border-gray-300 text-orange-800 hover:bg-slate-300 hover:rounded-md hover:text-blue-900 hover:font-bold"
                 >
+                  <span className="text-xl mx-2">{tabs.icon}</span>
                   <li>{tabs.name}</li>
                 </Link>
               ))}
